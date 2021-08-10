@@ -10,7 +10,7 @@ public class MovieManager {
     }
 
     public MovieManager(int lim) {
-        if (lim < 10) {
+        if (lim < limit) {
             this.limit = lim;
         } else this.limit = 10;
     }
@@ -58,20 +58,23 @@ public class MovieManager {
     }
 
     public CatalogMovie[] getLast() {
-        int resultLength;
+
+        int resultLength = movies.length + 1;
         if (movies.length > limit) {
             resultLength = limit;
         } else {
             resultLength = movies.length;
         }
         CatalogMovie[] result = new CatalogMovie[resultLength];
+
         for (int i = 0; i < result.length; i++) {
-            int index = movies.length - i - 1;
+            int index = result.length - i - 1;
             result[i] = movies[index];
         }
         return result;
     }
 
 }
+
 
 
