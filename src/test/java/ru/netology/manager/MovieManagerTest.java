@@ -107,7 +107,7 @@ public class MovieManagerTest {
         CatalogMovie ten = new CatalogMovie(10, 10, "Гнев человеческий", 1, 1);
         CatalogMovie eleven = new CatalogMovie(11, 11, "Чернобыль", 1, 1);
 
-        manager.add(first);
+
         manager.add(second);
         manager.add(third);
         manager.add(four);
@@ -117,12 +117,13 @@ public class MovieManagerTest {
         manager.add(eight);
         manager.add(nine);
         manager.add(ten);
+        manager.add(eleven);
 
         manager.getLast();
 
         CatalogMovie[] actual = manager.getLast();
-        CatalogMovie[] expected = new CatalogMovie[]{ten, nine, eight, seven, six, five, four,
-                third, second, first};
+        CatalogMovie[] expected = new CatalogMovie[]{eleven, ten, nine, eight, seven, six, five, four,
+                third, second};
 
         //    assertEquals(expected, actual);
         assertArrayEquals(expected, actual);
